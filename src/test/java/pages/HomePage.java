@@ -15,8 +15,8 @@ public class HomePage extends BasePage {
  
     //*********Web Elements*********
     By signInButtonBy = By.className("btnSignIn");
- 
- 
+    By txtTitle = By.className("txtTitle");
+    
     //*********Page Methods*********
     //Go to Homepage
     public HomePage goToN11 (){
@@ -24,6 +24,11 @@ public class HomePage extends BasePage {
         return this;
     }
  
+    //Get the title
+	public String getTitle(){
+		return readText(txtTitle);
+	}
+    
     //Go to LoginPage
     public LoginPage goToLoginPage (){
         click(signInButtonBy);

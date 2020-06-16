@@ -16,7 +16,8 @@ public class LoginPage extends BasePage{
     By loginButtonBy = By.id("loginButton");
     By errorMessageUsernameBy = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
     By errorMessagePasswordBy = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div ");
- 
+    By txtTitle = By.className("txtTitle");
+    
     //*********Page Methods*********
  
     public LoginPage loginToN11 (String username, String password){
@@ -29,6 +30,11 @@ public class LoginPage extends BasePage{
         return this;
     }
  
+    //Get the title
+  	public String getTitle(){
+  		return readText(txtTitle);
+  	}
+    
     //Verify Username Condition
     public LoginPage verifyLoginUserName (String expectedText) {
         assertEquals(errorMessageUsernameBy, expectedText);
